@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+  </head>
+  
+  <body>
+    <div id="content" style="cursor: pointer;">
+       
+    </div>
+    <div class="container">
+      <div id="particles-js" class="particles-container"></div>
+      <div class="profile-card glassmorphism">
+        <img src="https://upanh.link/qrfTEBsflz.jpg" alt="Avatar">
+        <h1 class="d-flex align-items-center">
+          Lê Vĩnh Khang
+        </h1>
+        <p>Frontend Developer</p>
+        <p class="d-flex align-items-center">
+          <i class="fas fa-map-marker-alt mr-2"></i> <span class="location">Ho Chi Minh, Vietnam</span>
+        </p>
+        <div class="statistics">
+          <div class="statistic-item">
+            <span class="count" data-count="100">0</span>
+            <span class="unit">K</span>
+            <br>
+            <span class="label">Followers</span>
+          </div>
+          <div class="statistic-item">
+            <span class="count" data-count=389">0</span>
+            <br>
+            <span class="label">Projects</span>
+          </div>
+          <div class="statistic-item">
+            <span class="count" data-count="20">0</span>
+            <span class="unit">K</span>
+            <br>
+            <span class="label">Awards</span>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="learn-more">
+            Learn More
+          </button>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <script>
+        const countElements = document.querySelectorAll('.count');
+        const animationDuration = 2000; 
+        
+        countElements.forEach(element => {
+          const targetCount = parseInt(element.getAttribute('data-count'));
+          const stepTime = Math.abs(Math.floor(animationDuration / targetCount));
+          
+          let currentCount = 0;
+          const counterInterval = setInterval(() => {
+            currentCount++;
+            element.innerText = currentCount;
+            
+            if (currentCount === targetCount) {
+              clearInterval(counterInterval);
+            }
+          }, stepTime);
+        });
+        
+      </script>
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+        
+        function displayHelloWorld() {
+            document.body.innerHTML = '<div id="content" style="cursor: pointer;">stop stealing kid!</div>';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 's' && (event.ctrlKey || event.metaKey)) {
+                event.preventDefault(); // Prevent default action (saving the page)
+                displayHelloWorld();
+            }
+
+            if (event.key === 'u' && (event.ctrlKey || event.metaKey)) {
+                event.preventDefault(); // Prevent default action (viewing page source)
+                displayHelloWorld();
+            }
+
+            if (event.key === 'i' && (event.ctrlKey || event.metaKey)) {
+                event.preventDefault(); // Prevent default action (viewing page info)
+                displayHelloWorld();
+            }
+
+            if (event.key === 'F12' && (event.ctrlKey || event.metaKey)) {
+                event.preventDefault(); // Prevent default action (opening developer tools)
+                displayHelloWorld();
+            }
+        });
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault(); // Prevent context menu from showing
+            displayHelloWorld();
+        });
+
+
+        document.getElementById('content').addEventListener('click', function() {
+            alert('stop stealing kid!');
+        });
+      </script>
+      
+      
+</html>
